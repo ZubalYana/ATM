@@ -73,6 +73,45 @@
   cursor: pointer;
   margin-left: 100px;
 }
+.wrap .welcomeScreen .welcomeScreen_contactUs_contactCircle {
+  width: 40px;
+  height: 40px;
+  color: #4E9F3D;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 3px 3px #4E9F3D;
+  border-radius: 50%;
+}
+.wrap .welcomeScreen .welcomeScreen_contactUs_hr {
+  width: 20px;
+  background-color: #353535;
+  height: 2px;
+  margin: 4px;
+}
+.wrap .welcomeScreen .welcomeScreen_contactUs_contacts {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: 10px;
+}
+.wrap .welcomeScreen .welcomeScreen_contactUsCon {
+  display: flex;
+  align-items: center;
+}
+.wrap .welcomeScreen .welcomeScreen_contactUs_contacts_overlow {
+  position: absolute;
+  width: 250px;
+  height: 70px;
+  background-color: #000000;
+  left: 0;
+  transition: 1.5s ease;
+}
+.wrap .welcomeScreen .welcomeScreen_contactUs_contactCircles {
+  display: flex;
+  align-items: center;
+}
 
 .screen {
   width: 100%;

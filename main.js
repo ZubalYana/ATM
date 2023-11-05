@@ -80,7 +80,22 @@ console.log(card1.getCardOptions())
 console.log(card2.getCardOptions())
 
 
-
+$('#ContactUs').hover(
+    function(){
+    $('.welcomeScreen_contactUs_contacts_overlow').css('left', '220px')
+},
+function() {
+    $('.welcomeScreen_contactUs_contacts_overlow').css('left', '0px');
+})
+$('.welcomeScreen_contactUs_contactCircles').hover(
+    function(){
+        $('.welcomeScreen_contactUs_contacts_overlow').css('left', '220px')
+    },
+    function() {
+        $('.welcomeScreen_contactUs_contacts_overlow').css('left', '0px');
+    }
+    
+)
 
 
 $('.welcomeScreen_input').hide(0);
