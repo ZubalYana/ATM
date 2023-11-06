@@ -125,8 +125,9 @@
 }
 .wrap .mainPage .mainPage_title {
   font-size: 24px;
-  color: #fff;
+  color: #4E9F3D;
   font-weight: 700;
+  text-shadow: 3px 3px 3px #1E5128;
 }
 .wrap .mainPage .mainPage_themeAndLangCon {
   width: 300px;
@@ -137,13 +138,15 @@
   border: none;
   outline: none;
   background-color: #000;
-  color: #fff;
+  color: #4E9F3D;
+  text-shadow: 3px 3px 3px #1E5128;
   height: 40px;
   font-size: 24px;
   font-weight: 600;
 }
 .wrap .mainPage option {
-  color: #fff;
+  color: #4E9F3D;
+  text-shadow: 3px 3px 3px #1E5128;
   border: none;
   outline: none;
   font-size: 24px;
