@@ -10,7 +10,7 @@
   height: 100vh;
 }
 .wrap .welcomeScreen {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   background-color: #000000;
@@ -113,7 +113,7 @@
   align-items: center;
 }
 .wrap .mainPage {
-  display: none;
+  display: flex;
   background-color: #000000;
   padding: 60px;
 }
@@ -122,6 +122,48 @@
   height: 10vh;
   display: flex;
   justify-content: space-between;
+}
+.wrap .mainPage .mainPage_title {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 700;
+}
+.wrap .mainPage .mainPage_themeAndLangCon {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+.wrap .mainPage #languageChanging {
+  border: none;
+  outline: none;
+  background-color: #000;
+  color: #fff;
+  height: 40px;
+  font-size: 24px;
+  font-weight: 600;
+}
+.wrap .mainPage option {
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 24px;
+  font-weight: 600;
+}
+.wrap .mainPage .mainPage_theme {
+  width: 75px;
+  height: 40px;
+  background-color: #1E5128;
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 20px;
+  transition: 3s ease;
+}
+.wrap .mainPage .mainPage_theme_circle {
+  background-color: #4E9F3D;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: 3s ease;
 }
 
 .screen {

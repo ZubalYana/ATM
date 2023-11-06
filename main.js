@@ -143,3 +143,15 @@ checkCardData();
 
 
 console.log(card1.getCardOptions().id)
+let theme = 'dark'
+//Add it to localStorage
+$('.mainPage_theme').click(function(){
+    if(theme == 'dark'){
+        $('.mainPage_theme').css('justify-content', 'flex-end')
+        theme = 'light'
+    }else{
+        $('.mainPage_theme').css('justify-content', 'flex-start')
+        theme = 'dark'
+    }
+
+})
