@@ -1,4 +1,4 @@
-function userCard(id){
+function userCard(id, pin){
     let balance = 100;
     let transactionLimit = 100;
     let historyLogs = [];
@@ -60,8 +60,8 @@ function userCard(id){
     }
 }
 
-let card1 = new userCard(5550208890011118);
-let card2 = new userCard(2200044555010100);
+let card1 = new userCard(5550208890011118, 3467);
+let card2 = new userCard(2200044555010100, 2398);
 
 
 // console.log(card1.getCardOptions())
@@ -125,8 +125,21 @@ function typeText() {
 
 typeText();
 
-function checkCardData(){
-    let cardNumberValue = $('#cardNumber').val();
-    let cardPINValue = $('#cardPIN').val();
+function checkCardData() {
 
+
+    $('#LogIn').click(function () {
+        if ($('#cardNumber').val() === '5550208890011118' && $('#cardPIN').val() === '3467') {
+            $('.welcomeScreen').css('display', 'none')
+            $('.mainPage').css('display', 'flex')
+        } else {
+            alert('Incorrect card number or PIN');
+            //поправити тут
+        }
+    });
 }
+
+checkCardData();
+
+
+console.log(card1.getCardOptions().id)
