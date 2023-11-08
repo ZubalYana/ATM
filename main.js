@@ -195,5 +195,13 @@ $('#cardInfo_close').click(function(){
 
 
 $('#TopUpTheBalanceBtn').click(function(){
-    $('.topUpBalance')
+    $('.topUpBalance').css('display', 'flex')
+    $('.mainPage').css('display', 'none')
 })
+
+$('#topUpBalance_close').click(function(){
+    $('.topUpBalance').css('display', 'none')
+    $('.mainPage').css('display', 'flex')
+})
+
+$('#TopUpBalance').click()
