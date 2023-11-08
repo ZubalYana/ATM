@@ -3,13 +3,15 @@ function userCard(id, pin){
     let transactionLimit = 100;
     let historyLogs = [];
 
-    function recordOperations(type, value, time){
+    function recordOperations(type, value) {
+        const time = new Date().toLocaleString();
         historyLogs.push({
             operationType: type,
             operationValue: value,
             operationTime: time
         });
     }
+    
 
     return {
         getCardOptions(){
@@ -17,7 +19,8 @@ function userCard(id, pin){
                 id,
                 balance,
                 transactionLimit,
-                historyLogs
+                historyLogs,
+                pin
             }
         },
         putCredits(amount){
@@ -154,4 +157,43 @@ $('.mainPage_theme').click(function(){
         theme = 'dark'
     }
 
+})
+
+$('#CardInfoBtn').click(function(){
+    $('.mainPage').css('display', 'none')
+    $('.cardInfo').css('display', 'flex')
+
+    $('#Card_id').html(`Number: ${card1.getCardOptions().id}`)
+    $('#Card_balance').html(`Balance: ${card1.getCardOptions().balance}`)
+    $('#Card_limit').html(`Limit: ${card1.getCardOptions().transactionLimit}`)
+
+$('#Card_historyLogs').html(`History: ${JSON.stringify(card1.getCardOptions().historyLogs)}`);
+
+
+const historyLogs = card1.getCardOptions().historyLogs;
+let historyHtml = "History:<br><ul class='History_ul'>";
+
+historyLogs.forEach(log => {
+    const operationType = log.operationType;
+    const operationValue = log.operationValue;
+    const operationTime = log.operationTime;
+    historyHtml += `<li class='History_li'>${operationType}: ${operationValue} at ${operationTime}</li>`;
+});
+
+historyHtml += "</ul>";
+
+$('#Card_historyLogs').html(historyHtml);
+
+    $('#Card_pin').html(`PIN: ${card1.getCardOptions().pin}`)
+
+})
+
+$('#cardInfo_close').click(function(){
+    $('.cardInfo').css('display', 'none')
+    $('.mainPage').css('display', 'flex')
+})
+
+
+$('#TopUpTheBalanceBtn').click(function(){
+    $('.topUpBalance')
 })
