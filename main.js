@@ -78,9 +78,9 @@ let card2 = new userCard(2200044555010100, 2398);
 // console.log(card1.getCardOptions())
 // card1.takeCredits(300)
 // console.log(card1.getCardOptions())
-card1.transferCredits(50, card2)
-console.log(card1.getCardOptions())
-console.log(card2.getCardOptions())
+// card1.transferCredits(50, card2)
+// console.log(card1.getCardOptions())
+// console.log(card2.getCardOptions())
 
 
 $('#ContactUs').hover(
@@ -204,4 +204,57 @@ $('#topUpBalance_close').click(function(){
     $('.mainPage').css('display', 'flex')
 })
 
-$('#TopUpBalance').click()
+$('#TopUpBalance').click(function(){
+    const amountToTopUp = $('#topUpBalance_input').val();
+
+    if (!isNaN(amountToTopUp)) {
+
+        card1.putCredits(parseFloat(amountToTopUp)); 
+        console.log(card1.getCardOptions());
+        $('.topUpBalance_textPart_fillingIn').css('display', 'none')
+        $('.topUpBalance_textPart_result').css('display', 'flex')
+        $('#ToppingUp_result').html(`Your balance was successfully topped up on ${amountToTopUp}$. Your balance is ${card1.getCardOptions().balance}$`)
+        $('.topUpBalance_textPart_result_btn').click(function(){
+            $('.topUpBalance_textPart_fillingIn').css('display', 'flex')
+            $('.topUpBalance_textPart_result').css('display', 'none')
+        })
+    } else {
+        console.log('Invalid input. Please enter a valid number.');
+    }
+    $('#topUpBalance_input').val('')
+});
+
+
+
+
+
+
+$('#WithdrawMoney').click(function(){
+    $('.withdrawMoney').css('display', 'flex')
+    $('.mainPage').css('display', 'none')
+})
+
+$('#withdrawMoney_close').click(function(){
+    $('.withdrawMoney').css('display', 'none')
+    $('.mainPage').css('display', 'flex')
+})
+
+$('#withdrawMoney').click(function(){
+    const amountWithdraw = $('#withdrawMoney_input').val();
+
+    if (!isNaN(amountWithdraw)) {
+
+        card1.takeCredits(parseFloat(amountWithdraw)); 
+        console.log(card1.getCardOptions());
+        $('.withdrawMoney_textPart_fillingIn').css('display', 'none')
+        $('.withdrawMoney_textPart_result').css('display', 'flex')
+        $('#withdrawMoney_result').html(`Your money were successfully taked from card on ${amountWithdraw}$. Your balance is ${card1.getCardOptions().balance}$`)
+        $('.withdrawMoney_textPart_result_btn').click(function(){
+            $('.withdrawMoney_textPart_fillingIn').css('display', 'flex')
+            $('.withdrawMoney_textPart_result').css('display', 'none')
+        })
+    } else {
+        console.log('Invalid input. Please enter a valid number.');
+    }
+    $('#withdrawMoney_input').val('')
+});

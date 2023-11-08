@@ -63,7 +63,7 @@
                 <div class="mainPage_mainPart_buttonsRow">
                     <div class="mainPage_mainPart_button" id="CardInfoBtn">View info about card</div>
                     <div class="mainPage_mainPart_button" id="TopUpTheBalanceBtn">Top up the balance</div>
-                    <div class="mainPage_mainPart_button">Withdraw money</div>
+                    <div class="mainPage_mainPart_button" id="WithdrawMoney">Withdraw money</div>
                 </div>
                 <div class="mainPage_mainPart_buttonsRow mainPage_mainPart_buttonsRow_right">
                     <div class="mainPage_mainPart_button">Top up your account</div>
@@ -133,11 +133,56 @@
             <div class="topUpBalance_mainpart">
 
                 <div class="topUpBalance_textPart">
+                    <div class="topUpBalance_textPart_fillingIn">
                     <h1>Enter your amount of money</h1>
                     <div class="topUpBalance_inputAndBtnCon">
                     <input type="text" id="topUpBalance_input">
                     <div class="topUpBalance_btn" id="TopUpBalance">Top up</div>
                 </div>
+            </div>
+            <div class="topUpBalance_textPart_result">
+                <h3 id="ToppingUp_result"></h3>
+                <div class="topUpBalance_textPart_result_btn">Got it</div>
+            </div>
+                </div>
+
+            <div class="mainPage_mainPart_CheckCardMoneyPart">
+                <div class="mainPage_mainPart_cardAndCheck">
+                <div class="mainPage_mainPart_CardCompartment">
+                    <div class="mainPage_mainPart_CardCompartment_backgroundPart_topPart"></div>
+                    <div class="mainPage_mainPart_CardCompartment_backgroundPart"></div>
+                </div>
+                <div class="mainPage_mainPart_CheckCompartment">
+                    <div class="mainPage_mainPart_CheckCompartment_backgroundPart_topPart"></div>
+                    <div class="mainPage_mainPart_CheckCompartment_backgroundPart"></div>
+                </div>
+            </div>
+                <div class="mainPage_mainPart_MoneyCompartment">
+                    <div class="mainPage_mainPart_MoneyCompartment_backgroundPart_topPart"></div>
+                    <div class="mainPage_mainPart_MoneyCompartment_backgroundPart"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="withdrawMoney screen">
+            <div class="non-header"></div>
+            <i class="fa-solid fa-xmark closeScreen_el" id="withdrawMoney_close"></i>
+
+            <div class="withdrawMoney_mainpart">
+
+                <div class="withdrawMoney_textPart">
+                    <div class="withdrawMoney_textPart_fillingIn">
+                    <h1>Enter your amount of money</h1>
+                    <div class="withdrawMoney_inputAndBtnCon">
+                    <input type="text" id="withdrawMoney_input">
+                    <div class="withdrawMoney_btn" id="withdrawMoney">Withdraw</div>
+                </div>
+            </div>
+            <div class="withdrawMoney_textPart_result">
+                <h3 id="withdrawMoney_result"></h3>
+                <div class="withdrawMoney_textPart_result_btn">Got it</div>
+            </div>
                 </div>
 
             <div class="mainPage_mainPart_CheckCardMoneyPart">
