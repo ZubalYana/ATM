@@ -78,9 +78,9 @@ let card2 = new userCard(2200044555010100, 2398);
 // console.log(card1.getCardOptions())
 // card1.takeCredits(300)
 // console.log(card1.getCardOptions())
-// card1.transferCredits(50, card2)
-// console.log(card1.getCardOptions())
-// console.log(card2.getCardOptions())
+card1.transferCredits(50, card2)
+console.log(card1.getCardOptions())
+console.log(card2.getCardOptions())
 
 
 $('#ContactUs').hover(
@@ -296,4 +296,42 @@ $('#TopUpAccBtn').click(function(){
     }
     $('#TopUpYourAc_Numberinput').val('')
     $('#TopUpYourAc_Amountinput').val('')
+})
+
+
+
+
+
+$('#SendMoney').click(function(){
+    $('.SendMoney').css('display', 'flex')
+    $('.mainPage').css('display', 'none')
+})
+
+$('#SendMoney_close').click(function(){
+    $('.SendMoney').css('display', 'none')
+    $('.mainPage').css('display', 'flex')
+})
+
+
+$('#SendMoneyBtn').click(function(){
+    
+    const CardNumber = $('#SendMoney_inputCard').val();
+    const MoneyToSend = $('#SendMoney_inputAmount').val();
+
+    if (!isNaN(MoneyToSend)) {
+
+        card1.transferCredits(MoneyToSend, card2); 
+        console.log(card1.getCardOptions());
+        $('.SendMoney_textPart_fillingIn').css('display', 'none')
+        $('.SendMoney_textPart_result').css('display', 'flex')
+        $('#SendMoney_result').html(`Money of amount of ${MoneyToSend}$ were successfully sended to ${CardNumber}. Your balance is ${card1.getCardOptions().balance}$`)
+        $('.SendMoney_textPart_result_btn').click(function(){
+            $('.SendMoney_textPart_fillingIn').css('display', 'flex')
+            $('.SendMoney_textPart_result').css('display', 'none')
+        })
+    } else {
+        console.log('Invalid input. Please enter a valid number.');
+    }
+    $('#SendMoney_inputCard').val('')
+    $('#SendMoney_inputAmount').val('')
 })

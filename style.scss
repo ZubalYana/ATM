@@ -540,6 +540,123 @@
 
     }
 
+
+
+
+    .SendMoney{
+        display: none;
+        padding: 60px;
+        position: relative;
+        flex-direction: column;
+
+        .SendMoney_mainpart{
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        .SendMoney_textPart{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        h1{
+            font-size: 40px;
+            font-weight: 700;
+            color: #4E9F3D;
+        }
+        #SendMoney_inputCard{
+            width: 500px;
+            height: 60px;
+            border: none;
+            outline: none;
+            border: #4E9F3D 5px solid;
+            color: #4E9F3D;
+            font-size: 24px;
+            font-weight: 700;
+            background-color: #000;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #SendMoney_inputAmount{
+            width: 500px;
+            height: 60px;
+            border: none;
+            outline: none;
+            border: #4E9F3D 5px solid;
+            color: #4E9F3D;
+            font-size: 24px;
+            font-weight: 700;
+            background-color: #000;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .SendMoney_inputAndBtnCon{
+            display: flex;
+            margin-top: 30px;
+        }
+        .SendMoney_btn{
+            height: 60px;
+            width: 150px;
+            border: #4E9F3D 5px solid;
+            color: #4E9F3D;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .SendMoney_inputAndBtnCon{
+            flex-direction: column;
+        }
+        .SendMoney_textPart_result{
+            font-size: 24px;
+            font-weight: 600;
+            color: #4E9F3D;
+            text-align: center;
+            width: 500px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .SendMoney_textPart_result_btn{
+            width: 150px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: #4E9F3D 5px solid;
+            color: #4E9F3D;
+            background-color: #000;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+        .SendMoney_textPart_fillingIn{
+            flex-direction: column;
+            display: flex;
+        }
+        .SendMoney_inputs{
+            flex-direction: column;
+        }
+        .SendMoney_warning{
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #4E9F3D;
+        }
+
+    }
+
 }
 .screen{
     width: 100%;
