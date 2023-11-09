@@ -258,3 +258,42 @@ $('#withdrawMoney').click(function(){
     }
     $('#withdrawMoney_input').val('')
 });
+
+
+
+
+
+$('#TopUpYourAccount').click(function(){
+    $('.TopUpYourAc').css('display', 'flex')
+    $('.mainPage').css('display', 'none')
+})
+
+$('#TopUpYourAc_close').click(function(){
+    $('.TopUpYourAc').css('display', 'none')
+    $('.mainPage').css('display', 'flex')
+})
+
+
+$('#TopUpAccBtn').click(function(){
+
+
+    const amountWithdrawForPhone = $('#TopUpYourAc_Amountinput').val();
+    const phoneNumber = $('#TopUpYourAc_Numberinput').val();
+
+    if (!isNaN(amountWithdrawForPhone)) {
+
+        card1.takeCredits(parseFloat(amountWithdrawForPhone)); 
+        console.log(card1.getCardOptions());
+        $('.TopUpYourAc_textPart_fillingIn').css('display', 'none')
+        $('.TopUpYourAc_textPart_result').css('display', 'flex')
+        $('#TopUpYourAc_result').html(`Your phone account ( ${phoneNumber} ) was successfully topped up on ${amountWithdrawForPhone}$. Your balance is ${card1.getCardOptions().balance}$`)
+        $('.TopUpYourAc_textPart_result_btn').click(function(){
+            $('.TopUpYourAc_textPart_fillingIn').css('display', 'flex')
+            $('.TopUpYourAc_textPart_result').css('display', 'none')
+        })
+    } else {
+        console.log('Invalid input. Please enter a valid number.');
+    }
+    $('#TopUpYourAc_Numberinput').val('')
+    $('#TopUpYourAc_Amountinput').val('')
+})

@@ -440,6 +440,106 @@
 
     }
 
+
+
+    .TopUpYourAc{
+        display: none;
+        padding: 60px;
+        position: relative;
+        flex-direction: column;
+
+        .TopUpYourAc_mainpart{
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        .TopUpYourAc_textPart{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        h1{
+            font-size: 40px;
+            font-weight: 700;
+            color: #4E9F3D;
+        }
+        .TopUpYourAc_input{
+            width: 500px;
+            height: 60px;
+            border: none;
+            outline: none;
+            border: #4E9F3D 5px solid;
+            color: #4E9F3D;
+            font-size: 24px;
+            font-weight: 700;
+            background-color: #000;
+
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .TopUpYourAc_inputAndBtnCon{
+            display: flex;
+            margin-top: 30px;
+            flex-direction: column;
+        }
+        .TopUpYourAc_btn{
+            height: 60px;
+            width: 150px;
+            border: #4E9F3D 5px solid;
+            color: #4E9F3D;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .TopUpYourAc_textPart_result{
+            font-size: 24px;
+            font-weight: 600;
+            color: #4E9F3D;
+            text-align: center;
+            width: 500px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .TopUpYourAc_textPart_result_btn{
+            width: 150px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: #4E9F3D 5px solid;
+            color: #4E9F3D;
+            background-color: #000;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+        .TopUpYourAc_textPart_fillingIn{
+            flex-direction: column;
+        }
+        .TopUpYourAc_inputs{
+            display: flex;
+            flex-direction: column;
+        }
+        #TopUpYourAc_Amountinput{
+            margin-top: 10px;
+        }
+        
+
+    }
+
 }
 .screen{
     width: 100%;
@@ -516,3 +616,7 @@
     width: 100%;
     height: 10vh;
 }
+
+input::placeholder {
+    color: #4d9f3d7e;
+  }
