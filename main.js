@@ -335,3 +335,52 @@ $('#SendMoneyBtn').click(function(){
     $('#SendMoney_inputCard').val('')
     $('#SendMoney_inputAmount').val('')
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$('#SetLimit').click(function(){
+    $('.setLimit').css('display', 'flex')
+    $('.mainPage').css('display', 'none')
+})
+
+$('#setLimit_close').click(function(){
+    $('.setLimit').css('display', 'none')
+    $('.mainPage').css('display', 'flex')
+})
+
+
+$('#setLimit_h1').html(`Your limit is now ${card1.getCardOptions().transactionLimit}$ If you want to change it you can fill in your sum here:`)
+
+
+$('#setLimitBtn').click(function(){
+    const SetLimit = $('#setLimit_input').val();
+        card1.setTransactionLimit(parseFloat(SetLimit)); 
+        console.log(card1.getCardOptions());
+
+        $('.setLimit_textPart_fillingIn').css('display', 'none')
+        $('.setLimit_textPart_result').css('display', 'flex')
+        $('#setLimit_result').html(`Your limit was successfully changed to ${card1.getCardOptions().transactionLimit}$`)
+        $('.setLimit_textPart_result_btn').click(function(){
+            $('.setLimit_textPart_fillingIn').css('display', 'flex')
+            $('.setLimit_textPart_result').css('display', 'none')
+        })
+    $('#setLimit_input').val('')
+})
