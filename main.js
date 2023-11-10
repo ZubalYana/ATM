@@ -62,27 +62,8 @@ function userCard(id, pin){
         }
     }
 }
-
 let card1 = new userCard(5550208890011118, 3467);
 let card2 = new userCard(2200044555010100, 2398);
-
-
-// console.log(card1.getCardOptions())
-// card1.putCredits(50)
-// console.log(card1.getCardOptions())
-// card1.takeCredits(100)
-// console.log(card1.getCardOptions())
-// card1.setTransactionLimit(300)
-// console.log(card1.getCardOptions())
-// card1.putCredits(300)
-// console.log(card1.getCardOptions())
-// card1.takeCredits(300)
-// console.log(card1.getCardOptions())
-card1.transferCredits(50, card2)
-console.log(card1.getCardOptions())
-console.log(card2.getCardOptions())
-
-
 $('#ContactUs').hover(
     function(){
     $('.welcomeScreen_contactUs_contacts_overlow').css('left', '220px')
@@ -99,16 +80,12 @@ $('.welcomeScreen_contactUs_contactCircles').hover(
     }
     
 )
-
-
 $('.welcomeScreen_input').hide(0);
 $('.welcomeScreen_button').hide(0);
 $('.welcomeScreen_help_text').hide(0);
-
 let autoTypeText = document.getElementById("autoTypeText");
 let textToType = "Hello, please enter your card number and PIN.";
 let currentIndex = 0;
-
 function typeText() {
     if (currentIndex < textToType.length) {
         autoTypeText.innerHTML += textToType.charAt(currentIndex);
@@ -125,12 +102,8 @@ function typeText() {
     }
 
 }
-
 typeText();
-
 function checkCardData() {
-
-
     $('#LogIn').click(function () {
         if ($('#cardNumber').val() === '5550208890011118' && $('#cardPIN').val() === '3467') {
             $('.welcomeScreen').css('display', 'none')
@@ -141,13 +114,9 @@ function checkCardData() {
         }
     });
 }
-
 checkCardData();
-
-
 console.log(card1.getCardOptions().id)
 let theme = 'dark'
-//Add it to localStorage
 $('.mainPage_theme').click(function(){
     if(theme == 'dark'){
         $('.mainPage_theme').css('justify-content', 'flex-end')
@@ -187,27 +156,22 @@ $('#Card_historyLogs').html(historyHtml);
     $('#Card_pin').html(`PIN: ${card1.getCardOptions().pin}`)
 
 })
-
 $('#cardInfo_close').click(function(){
     $('.cardInfo').css('display', 'none')
     $('.mainPage').css('display', 'flex')
 })
-
-
 $('#TopUpTheBalanceBtn').click(function(){
     $('.topUpBalance').css('display', 'flex')
     $('.mainPage').css('display', 'none')
 })
-
 $('#topUpBalance_close').click(function(){
     $('.topUpBalance').css('display', 'none')
     $('.mainPage').css('display', 'flex')
 })
-
 $('#TopUpBalance').click(function(){
     const amountToTopUp = $('#topUpBalance_input').val();
 
-    if (!isNaN(amountToTopUp)) {
+    if (!isNaN(amountToTopUp) && amountToTopUp<=card1.getCardOptions().transactionLimit) {
 
         card1.putCredits(parseFloat(amountToTopUp)); 
         console.log(card1.getCardOptions());
@@ -218,31 +182,30 @@ $('#TopUpBalance').click(function(){
             $('.topUpBalance_textPart_fillingIn').css('display', 'flex')
             $('.topUpBalance_textPart_result').css('display', 'none')
         })
+
     } else {
-        console.log('Invalid input. Please enter a valid number.');
+        $('.topUpBalance_textPart_fillingIn').css('display', 'none')
+        $('.topUpBalance_limitIsnotFit').css('display', 'flex')
+        $('.topUpBalance_textPart_result_btn2').click(function(){
+            $('.topUpBalance_textPart_fillingIn').css('display', 'flex')
+            $('.topUpBalance_limitIsnotFit').css('display', 'none')
+        })
+        $('#topUpBalance_limitIsnotFit_h1').html(`Sorry, your limit is ${card1.getCardOptions().transactionLimit}$. You are trying to top up for ${amountToTopUp}$. Try smaller sum or change the limit.`)
     }
     $('#topUpBalance_input').val('')
 });
-
-
-
-
-
-
 $('#WithdrawMoney').click(function(){
     $('.withdrawMoney').css('display', 'flex')
     $('.mainPage').css('display', 'none')
 })
-
 $('#withdrawMoney_close').click(function(){
     $('.withdrawMoney').css('display', 'none')
     $('.mainPage').css('display', 'flex')
 })
-
 $('#withdrawMoney').click(function(){
     const amountWithdraw = $('#withdrawMoney_input').val();
 
-    if (!isNaN(amountWithdraw)) {
+    if (!isNaN(amountWithdraw) && amountWithdraw<=card1.getCardOptions().transactionLimit) {
 
         card1.takeCredits(parseFloat(amountWithdraw)); 
         console.log(card1.getCardOptions());
@@ -252,31 +215,28 @@ $('#withdrawMoney').click(function(){
         $('.withdrawMoney_textPart_result_btn').click(function(){
             $('.withdrawMoney_textPart_fillingIn').css('display', 'flex')
             $('.withdrawMoney_textPart_result').css('display', 'none')
+            %('.withdrawMoney_limitIsnotFit').css('display', 'none')
         })
     } else {
-        console.log('Invalid input. Please enter a valid number.');
+        $('.withdrawMoney_textPart_fillingIn').css('display', 'none')
+        $('.withdrawMoney_limitIsnotFit').css('display', 'flex')
+        $('.withdrawMoney_textPart_result_btn2').click(function(){
+            $('.withdrawMoney_textPart_fillingIn').css('display', 'flex')
+            $('.withdrawMoney_limitIsnotFit').css('display', 'none')
+        })
+        $('#withdrawMoney_limitIsnotFit_h1').html(`Sorry, your limit is ${card1.getCardOptions().transactionLimit}$. You are trying to withdraw ${amountWithdraw}$. Try smaller sum or change the limit.`)
     }
     $('#withdrawMoney_input').val('')
 });
-
-
-
-
-
 $('#TopUpYourAccount').click(function(){
     $('.TopUpYourAc').css('display', 'flex')
     $('.mainPage').css('display', 'none')
 })
-
 $('#TopUpYourAc_close').click(function(){
     $('.TopUpYourAc').css('display', 'none')
     $('.mainPage').css('display', 'flex')
 })
-
-
 $('#TopUpAccBtn').click(function(){
-
-
     const amountWithdrawForPhone = $('#TopUpYourAc_Amountinput').val();
     const phoneNumber = $('#TopUpYourAc_Numberinput').val();
 
@@ -297,22 +257,14 @@ $('#TopUpAccBtn').click(function(){
     $('#TopUpYourAc_Numberinput').val('')
     $('#TopUpYourAc_Amountinput').val('')
 })
-
-
-
-
-
 $('#SendMoney').click(function(){
     $('.SendMoney').css('display', 'flex')
     $('.mainPage').css('display', 'none')
 })
-
 $('#SendMoney_close').click(function(){
     $('.SendMoney').css('display', 'none')
     $('.mainPage').css('display', 'flex')
 })
-
-
 $('#SendMoneyBtn').click(function(){
     
     const CardNumber = $('#SendMoney_inputCard').val();
@@ -335,41 +287,16 @@ $('#SendMoneyBtn').click(function(){
     $('#SendMoney_inputCard').val('')
     $('#SendMoney_inputAmount').val('')
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $('#SetLimit').click(function(){
     $('.setLimit').css('display', 'flex')
     $('.mainPage').css('display', 'none')
 })
-
 $('#setLimit_close').click(function(){
     $('.setLimit').css('display', 'none')
     $('.mainPage').css('display', 'flex')
 })
-
-
+const CurrentLimit = card1.getCardOptions().transactionLimit;
 $('#setLimit_h1').html(`Your limit is now ${card1.getCardOptions().transactionLimit}$ If you want to change it you can fill in your sum here:`)
-
-
 $('#setLimitBtn').click(function(){
     const SetLimit = $('#setLimit_input').val();
         card1.setTransactionLimit(parseFloat(SetLimit)); 
@@ -383,4 +310,5 @@ $('#setLimitBtn').click(function(){
             $('.setLimit_textPart_result').css('display', 'none')
         })
     $('#setLimit_input').val('')
+    $('#setLimit_h1').html(`Your limit is now ${card1.getCardOptions().transactionLimit}$ If you want to change it you can fill in your sum here:`)
 })

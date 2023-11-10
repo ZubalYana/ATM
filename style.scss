@@ -316,6 +316,17 @@
             margin-left: 20px;
             cursor: pointer;
         }
+        .topUpBalance_limitIsnotFit{
+            display: none;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        #topUpBalance_limitIsnotFit_h1{
+            font-size: 40px;
+            font-weight: 700;
+            color: #4E9F3D;
+        }
         .topUpBalance_textPart_result{
             display: none;
             flex-direction: column;
@@ -330,6 +341,20 @@
 
         }
         .topUpBalance_textPart_result_btn{
+            width: 150px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: #4E9F3D 5px solid;
+            color: #4E9F3D;
+            background-color: #000;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+        .topUpBalance_textPart_result_btn2{
             width: 150px;
             height: 60px;
             display: flex;
@@ -371,6 +396,20 @@
             justify-content: center;
             flex-direction: column;
         }
+        .withdrawMoney_textPart_result_btn2{
+            width: 150px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: #4E9F3D 5px solid;
+            color: #4E9F3D;
+            background-color: #000;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 30px;
+        }
         h1{
             font-size: 40px;
             font-weight: 700;
@@ -389,6 +428,12 @@
 
             padding: 10px;
             border-radius: 5px;
+        }
+        .withdrawMoney_limitIsnotFit{
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         .withdrawMoney_inputAndBtnCon{
             display: flex;
